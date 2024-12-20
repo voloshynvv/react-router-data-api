@@ -1,7 +1,8 @@
 export interface User {
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
+  firstName: string | null;
+  lastName: string | null;
+  email: string | null;
   image: string;
+  favorite: boolean;
 }

@@ -22,7 +22,7 @@ export const UsersList = () => {
               }
               to={`/contacts/${user.id}`}
             >
-              {user.firstName} {user.lastName}
+              {(user.firstName && user.lastName) || 'No name'}
             </NavLink>
           </li>
         ))}

@@ -4,13 +4,13 @@ import { SearchForm } from '@/components/search-form';
 import { Button } from '@/components/ui/button';
 import { UsersList } from '@/components/users-list';
 
-import { useAppNavigation } from '@/hooks/useAppNavigation';
+import { useAppNavigation } from '@/hooks/use-app-navigation';
 
 export const Sidebar = () => {
   const { isSubmitting } = useAppNavigation();
 
   return (
-    <aside className="flex h-screen flex-col border bg-gray-100">
+    <aside className="flex h-full w-full flex-col border bg-gray-100">
       <div className="border-b p-4 px-6">
         <SearchForm />
       </div>

@@ -11,4 +11,8 @@ export const routes = {
     path: '/contacts/:id/edit',
     getHref: (id: string) => `/contacts/${id}/edit`,
   },
+  destroy: {
+    path: '/contacts/:id/destroy',
+    getHref: (id: string) => `/contacts/${id}/destroy`,
+  },
 };

@@ -1,14 +1,13 @@
-import { useId } from 'react';
 import { Form, useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
-import { useAppNavigation } from '@/hooks/useAppNavigation';
+import { useAppNavigation } from '@/hooks/use-app-navigation';
 import { SearchParams } from '@/types/common';
 
 export const SearchForm = () => {
-  const searchId = useId();
   const [searchParams, setSearchParams] = useSearchParams();
   const { isLoading } = useAppNavigation();
 
@@ -27,17 +26,15 @@ export const SearchForm = () => {
   return (
     <search>
       <Form className={twMerge('relative flex gap-x-2 transition-opacity', isSubmitting && 'opacity-50')}>
-        <input
-          className="w-full rounded bg-white px-2 py-1 shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-600"
-          id={searchId}
-          name="query"
+        <Input
           type="search"
+          name="query"
           placeholder="Search"
           aria-label="search contacts"
           defaultValue={query}
-          required
           onChange={handleChange}
           disabled={isSubmitting}
+          required
         />
 
         <Button type="submit">Search</Button>
